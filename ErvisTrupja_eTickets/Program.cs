@@ -1,4 +1,13 @@
+using ErvisTrupja_eTickets.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Adding DbContext Configuration 
+// This is all you need to do to configure the SQL Server
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -25,3 +34,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+// Seed database
+AppDbInitializer.Seed(app);

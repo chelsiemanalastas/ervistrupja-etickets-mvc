@@ -10,6 +10,7 @@
   "profiles": {
     "ErvisTrupja_eTickets": {
       "commandName": "Project",
+      "launchUrl": "Movies",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7044;http://localhost:5184",
@@ -19,6 +20,7 @@
     },
     "IIS Express": {
       "commandName": "IISExpress",
+      "launchUrl": "Movies",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
